@@ -1,1 +1,83 @@
-# Need to be finalized the structure 
+# +required The configuration file schema version
+schemaVersion: 1.0
+
+
+# +optional Incoming connection details for the component
+endpoints:
+# +required Unique name for the endpoint.
+# This name will be used when generating the managed API
+ - name: greeter-sample
+   # +optional Display name for the endpoint.
+   displayName: Go Greeter Sample
+   # +required Numeric port value that gets exposed via the endpoint
+   port: 9090
+   # +required Type of traffic that the endpoint is accepting.
+   # Allowed values: REST, GraphQL, GRPC, TCP, UDP.
+   type: REST
+   # +optional Network level visibility of the endpoint. 
+   # Accepted values: Project(Default)|Organization|Public.
+   networkVisibility: Public
+   # +optional Network level visibilities of the endpoint.
+   # Takes priority over networkVisibility if defined. 
+   # Accepted values: Project|Organization|Public(Default).
+   networkVisibilities: 
+    - Public
+    - Organization
+   # +optional Context (base path) of the API that gets exposed via the endpoint.
+   # This is mandatory if the endpoint type is set to REST or GraphQL.
+   context: /hello
+   # +optional The path to the schema definition file.
+   # Defaults to wildcard route if not specified.
+   # This is only applicable to REST endpoint types.
+   # The path should be relative to the docker context.
+   schemaFilePath: greeting_openapi.yaml
+
+
+# +optional Outgoing connection details for the component.
+dependencies:
+  connectionReferences:
+    # For internal service references:
+    # [/projectHandle/]componentHandle/majorVersion[/endpointHandle]
+    - name: /HRProj/UserCom/v1
+    - name: SalaryCom/v2/EP2
+    - name: BillCom/v1
+    # For external service references
+    # external:salesforceFoo, external:salesforceBar
+    - name: external:salesforceFoo
+
+
+# +optional Runtime configurations. Environment variables, file mounts, and command line arguments.
+configuration:
+ # +optional List of command line arguments to be injected into the component.
+ args: ["--option1", "value1", "--option2", "value2"]
+
+
+ # +optional List of environment variables to be injected into the component.
+ env:
+   # +optional Define adhoc configuration 
+   - name: REDIS_URL
+     value: "https://redis-example.com"
+   # +optional Use shareable configuration
+   - name: REDIS_PASSWORD
+     valueFrom:
+       configGroupRef:
+         name: redisConfig
+         key: password
+   # +optional Define connection configuration (TBC)
+   - name: MY_SERVICE_URL
+     valueFrom:
+       environmentVariableRef: CHOREO_BILL_COM_SERVICE_URL
+
+
+ # +optional List of files mounted into the component.
+ file:
+   # +optional Define adhoc configuration 
+   - name: config.txt
+     mountPath: /etc/config
+     value: "This is a config file"
+   # +optional Use shareable configuration
+   - name: crt.pem
+     mountPath: /etc/certs
+     configMappingRef:
+       groupName: group1
+       key: tls-cert
