@@ -130,7 +130,7 @@
     "operations": [
       {
         "id": "",
-        "target": "/",
+        "target": "/*",
         "verb": "GET",
         "authType": "Application & Application User",
         "throttlingPolicy": "Unlimited",
