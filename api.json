@@ -1,0 +1,186 @@
+{
+    "id": "667d093f2f56c22b5c14f530",
+    "name": "test-forward-slash",
+    "displayName": "test forward slash",
+    "description": "This api is used to connect to the test forward slash service",
+    "context": "/167688f6-08b1-4d35-b104-a70b9a3c4d67/qsbd/test-fwd-slash",
+    "version": "v1.0",
+    "provider": "9c243369-29b5-4e11-844a-05aef97eca49",
+    "lifeCycleStatus": "CREATED",
+    "wsdlInfo": null,
+    "wsdlUrl": null,
+    "responseCachingEnabled": false,
+    "cacheTimeout": 300,
+    "hasThumbnail": false,
+    "isDefaultVersion": false,
+    "isRevision": false,
+    "enableBackendJWT": false,
+    "backendJWTConfiguration": {
+      "audiences": []
+    },
+    "revisionedApiId": null,
+    "revisionId": 0,
+    "enableSchemaValidation": false,
+    "type": "HTTP",
+    "audience": null,
+    "transport": [
+      "http",
+      "https"
+    ],
+    "tags": [],
+    "policies": [
+      "Bronze"
+    ],
+    "apiThrottlingPolicy": null,
+    "throttlingLimit": null,
+    "authorizationHeader": "Authorization",
+    "securityScheme": [],
+    "maxTps": null,
+    "visibility": "PRIVATE",
+    "visibleRoles": [
+      ""
+    ],
+    "visibleTenants": [],
+    "mediationPolicies": [],
+    "subscriptionAvailability": "CURRENT_TENANT",
+    "subscriptionAvailableTenants": [
+      ""
+    ],
+    "additionalProperties": [
+      {
+        "name": "projectId",
+        "value": "e0a35407-aa40-4fbe-a846-f8edbf2ce199",
+        "display": true
+      },
+      {
+        "name": "accessibility",
+        "value": "external",
+        "display": true
+      }
+    ],
+    "additionalPropertiesMap": {
+      "projectId__display": {
+        "name": "projectId",
+        "value": "e0a35407-aa40-4fbe-a846-f8edbf2ce199",
+        "display": false
+      },
+      "accessibility__display": {
+        "name": "accessibility",
+        "value": "external",
+        "display": false
+      }
+    },
+    "monetization": null,
+    "accessControl": "NONE",
+    "accessControlRoles": [],
+    "businessInformation": {
+      "businessOwner": null,
+      "businessOwnerEmail": null,
+      "technicalOwner": null,
+      "technicalOwnerEmail": null
+    },
+    "corsConfiguration": {
+      "corsConfigurationEnabled": false,
+      "accessControlAllowOrigins": [
+        "*"
+      ],
+      "accessControlAllowCredentials": false,
+      "accessControlAllowHeaders": [
+        "authorization",
+        "Access-Control-Allow-Origin",
+        "Content-Type",
+        "SOAPAction",
+        "apikey",
+        "API-Key",
+        "testKey"
+      ],
+      "accessControlAllowMethods": [
+        "GET",
+        "PUT",
+        "POST",
+        "DELETE",
+        "PATCH",
+        "OPTIONS"
+      ]
+    },
+    "websubSubscriptionConfiguration": {
+      "enable": false,
+      "secret": "",
+      "signingAlgorithm": "SHA1",
+      "signatureHeader": "x-hub-signature"
+    },
+    "workflowStatus": null,
+    "createdTime": "1719470399606",
+    "lastUpdatedTime": "2024-06-28 10:23:19.956",
+    "endpointConfig": {
+      "endpoint_type": "http",
+      "sandbox_endpoints": {
+        "url": "https://webhook.site/fd7ec3a4-1a13-4c28-8ba6-422f1bf909aa"
+      },
+      "production_endpoints": {
+        "config": {
+          "actionDuration": ""
+        },
+        "url": "https://webhook.site/fd7ec3a4-1a13-4c28-8ba6-422f1bf909aa"
+      }
+    },
+    "endpointImplementationType": "ENDPOINT",
+    "scopes": [],
+    "scopePrefix": null,
+    "operations": [
+      {
+        "id": "",
+        "target": "/",
+        "verb": "GET",
+        "authType": "Application & Application User",
+        "throttlingPolicy": "Unlimited",
+        "throttlingLimit": {
+          "requestCount": -1,
+          "unit": "MINUTE"
+        },
+        "scopes": [],
+        "usedProductIds": [],
+        "amznResourceName": null,
+        "amznResourceTimeout": null,
+        "payloadSchema": null,
+        "uriMapping": null,
+        "operationPolicies": {
+          "request": [
+            {
+              "policyName": "shanorg%2F%remove_slash",
+              "policyVersion": "1.0.2",
+              "policyId": "429efe1c-b4f9-4010-8ccf-0a9fc50c14db",
+              "parameters": {}
+            }
+          ],
+          "response": [],
+          "fault": []
+        }
+      }
+    ],
+    "threatProtectionPolicies": null,
+    "categories": [],
+    "keyManagers": [
+      "all"
+    ],
+    "serviceInfo": null,
+    "advertiseInfo": {
+      "advertised": false,
+      "apiExternalProductionEndpoint": null,
+      "apiExternalSandboxEndpoint": null,
+      "originalDevPortalUrl": null,
+      "apiOwner": "9c243369-29b5-4e11-844a-05aef97eca49",
+      "vendor": "WSO2"
+    },
+    "gatewayVendor": "wso2",
+    "gatewayType": "wso2/synapse",
+    "asyncTransportProtocols": [
+      ""
+    ],
+    "choreoComponentInfo": {
+      "organizationId": "167688f6-08b1-4d35-b104-a70b9a3c4d67",
+      "projectId": "e0a35407-aa40-4fbe-a846-f8edbf2ce199",
+      "componentId": "b3439d02-0e21-4078-9b26-85db9147450c",
+      "versionId": "667d093f2f56c22b5c14f530"
+    }
+  }
