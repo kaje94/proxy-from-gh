@@ -1,0 +1,6 @@
+schemaVersion: 0.9
+proxy:
+  type: REST
+  schemaFilePath: swagger copy.yaml
+  docPath: /inv-api/assets/documents
+  thumbnailPath: /inv-api/assets/thumbnail.png
